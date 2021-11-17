@@ -1,25 +1,26 @@
 //Global Variable 
 
 float buttonX, buttonY, buttonWidth, buttonHeight;
-color  buttonColor, yellow=#FFF700, purple=#E334F7, white=#FFFFFF, resetColor=white;
+color  buttonColor, yellow=#FFF700, purple=#E334F7, white=#FFFFFF, resetColor=white, red=#FF0009;
 
 void setup() {
   //Geometry
   fullScreen();
+  noStroke();
   //popularion
-  buttonX = displayWidth*1/4;
-  buttonY = displayHeight*1/3;
-  buttonWidth = displayWidth*1/2;
-  buttonHeight = displayHeight*1/3;
+  buttonX = displayWidth*124/128;
+  buttonY = displayHeight*0/128;
+  buttonWidth = displayWidth*128/128;
+  buttonHeight = displayHeight*4/128;
 }//End setup()
 
 void draw() {
   background(white);
   println(mouseX, mouseY);
   if (mouseX >= buttonX && mouseY >= buttonY && mouseX <= buttonX+buttonWidth &&  mouseY <= buttonY+buttonHeight) {
-    buttonColor = color(random(255), random(255), random(255));
+    buttonColor = red; //color(random(255), random(255), random(255));
   } else {
-    buttonColor = purple;
+    buttonColor = white;
   }//End IF Button Colour
   fill(buttonColor);
   rect(buttonX, buttonY, buttonWidth, buttonHeight);
